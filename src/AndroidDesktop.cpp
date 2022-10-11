@@ -166,7 +166,7 @@ status_t AndroidDesktop::updateDisplayInfo() {
         ALOGE("Failed to get display configuration\n");
         return err;
     }
-    ALOGV("updateDisplayInfo: [%d:%d]", mDisplayMode.resolution.width, mDisplayMode.resolution.height);
+    //ALOGV("updateDisplayInfo: [%d:%d]", mDisplayMode.resolution.width, mDisplayMode.resolution.height);
 
     err = SurfaceComposerClient::getDisplayState(displayToken, &mDisplayState);
     if (err != NO_ERROR) {
