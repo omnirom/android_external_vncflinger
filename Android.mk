@@ -33,7 +33,7 @@ LOCAL_CFLAGS += -Ofast -Werror -fexceptions -Wno-implicit-fallthrough
 
 LOCAL_CFLAGS += -DLOG_NDEBUG=0
 
-LOCAL_INIT_RC := etc/vncflinger.rc
+#LOCAL_INIT_RC := etc/vncflinger.rc
 
 LOCAL_MODULE := vncflinger
 
