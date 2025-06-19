@@ -1,0 +1,39 @@
+cc_binary {
+    name: "vncflinger",
+
+    srcs: [
+        "src/AndroidDesktop.cpp",
+        "src/AndroidPixelBuffer.cpp",
+        "src/InputDevice.cpp",
+        "src/VirtualDisplay.cpp",
+        "src/main.cpp",
+    ],
+
+    include_dirs: ["external/tigervnc/common"],
+    local_include_dirs: ["src"],
+
+    shared_libs: [
+        "libbinder",
+        "libcrypto",
+        "libcutils",
+        "libgui",
+        "libjpeg",
+        "libssl",
+        "libui",
+        "libutils",
+        "libz",
+        "liblog",
+    ],
+
+    static_libs: ["libtigervnc"],
+
+    cflags: ["-DVNCFLINGER_VERSION=\"0.1\""] + [
+        "-Ofast",
+        "-Werror",
+        "-fexceptions",
+        "-Wno-implicit-fallthrough",
+    ] + ["-DLOG_NDEBUG=0"],
+
+    system_ext_specific: true,
+
+}
